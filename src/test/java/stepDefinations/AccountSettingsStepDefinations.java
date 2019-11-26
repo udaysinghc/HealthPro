@@ -39,9 +39,7 @@ public class AccountSettingsStepDefinations extends SetupClass{
 
 	@And("^'Online Only' payment method$")
 	public void online_Only_payment_method() throws Throwable {
-
 		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.onlineOnlyOptions);
-
 		webelement.click();
 	}
 	@And("^'In Person & Online' payment method$")
@@ -58,9 +56,7 @@ public class AccountSettingsStepDefinations extends SetupClass{
 	
 	@Then("^Verify \"([^\"]*)\" panel header Title text$")
 	public void verify_panel_header_Title_text(String title) throws Throwable {
-
 		Thread.sleep(1500);
-
 		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.panelHeaderTitle);
 		String resultObtain=webelement.getText();
 		String expectedTitle=title;

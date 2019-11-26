@@ -15,7 +15,6 @@ public class SignUpPage extends SetupClass{
 	public static By signup_proff = By.xpath("//a[@class='auth--footer-item btn m-light_blue m-large auth--footer-signup-links-professional']");
 	public static By signup_Client = By.xpath("//a[@class='auth--footer-item btn m-no_bg m-blue m-large auth--footer-signup-links-client']");
 	public static By Pricing_active_verify = By.xpath("(//li[@class=' m-current']/descendant::a[contains(text(),'Pricing')])[1]");
-
     public static By healthpro_buy_div = By.xpath("//div[@class='pricing_box m-red m-healthpro animated fadeInUp']");
     public static By buynow_health = By.xpath("(//button[@class='btn_round m-red_mute'])");
     public static By buynow_HealthProPlus = By.xpath("(//button[@class='btn_round m-blue_mute'])[1]");
@@ -37,9 +36,7 @@ public class SignUpPage extends SetupClass{
     
     //Welcome to the HealthPRO Sign-Up Wizard
     public static By welcomeText_SignUpWizard =By.xpath("//h1[@class='thank_you--cover_title']");
-
     public static By btnGet_Started=By.xpath("//a[@class='thank_you--content_btn btn m-green']");
-
     
     //Set Your Primary Location
     public static By txtPrimary_Location=By.xpath("//h2[contains(text(),'Set Your Primary Location')]");

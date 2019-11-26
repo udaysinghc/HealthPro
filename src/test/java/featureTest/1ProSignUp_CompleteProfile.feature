@@ -84,10 +84,7 @@ Feature: 'PRO SIGN UP AND COMPLETE PROFILE' Test
 	And Click on 'Log In with PayPal' button
 	And Verify 'Log in with PayPal' header text appears
 	Then login with 'PayPal' Account
-<<<<<<< HEAD
 	And 'In Person & Online' payment method
-=======
->>>>>>> b290065c50fdf2895df8f01250b33be864ce11fe
 	And Verify 'Your PayPal account is connected' String Message
 	
 #	Scenario: Add 'Stripe' Account
