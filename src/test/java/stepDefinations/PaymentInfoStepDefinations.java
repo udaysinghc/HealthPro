@@ -64,8 +64,10 @@ public class PaymentInfoStepDefinations extends SetupClass{
 	
 	@And("^Verify \"([^\"]*)\" popup header Title text$")
 	public void verify_popup_header_Title_text(String title) throws Throwable {
+
 		Thread.sleep(3000);
 		try {
+		Thread.sleep(2000);
 		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.popupHeaderTitle);
 		String resultObtain=webelement.getText();
 		String expectedTitle=title;

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,13 +13,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.healthPro.base.SetupClass;
 import com.healthPro.pages.ClientsLoginPage;
 import com.healthPro.pages.ClientsPage;
 import com.healthPro.pages.SignUpPage;
 import com.healthPro.util.TestUtil;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -57,7 +54,7 @@ public class ClientInvitationStepDefinations extends SetupClass{
 
 	@Then("^Verify Invitaion mail received$")
 	public void verify_Invitaion_mail_received() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
 		List<WebElement> list=driver.findElements(By.xpath("//ul[@class='msg_list']//li"));
 		int totalInboxMail=list.size();
 		System.out.println("Total number of mail :"+totalInboxMail);
@@ -301,12 +298,15 @@ public class ClientInvitationStepDefinations extends SetupClass{
 	}
 	@Then("^Verify 'Booking Successful' success message appears on prompt$")
 	public void verify_Booking_Successful_success_message_appears_on_prompt() throws Throwable {
+
 		try{webelement=TestUtil.presenceOfElementWait(By.xpath("//h1[contains(text(),'Booking Successful')]"));
+
 		Boolean bln=(new WebDriverWait(driver,30)).until(ExpectedConditions.textToBePresentInElement(webelement, "Booking Successful"));
 		if(bln){
 		   String resultObtain=webelement.getText();
 			String expectedTitle="Booking Successful";
 			assertEquals(expectedTitle,resultObtain);
+
 			System.out.println(" Title Text is verified");}}catch(Exception e) 
 		{
 				Thread.sleep(1000);
@@ -562,6 +562,7 @@ public class ClientInvitationStepDefinations extends SetupClass{
 		assertEquals(expectedTitle,resultObtain);
 		System.out.println("Add Credit Card Title Text is verified");
 	}
+
 	
 	@And("^Enter \"([^\"]*)\" in \"([^\"]*)\" TextBox at Sign_In_popup$")
 	public void enter_in_TextBox_at_Sign_In_popup(String arg1, String arg2) throws Throwable {

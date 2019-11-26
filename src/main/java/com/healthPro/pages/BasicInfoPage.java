@@ -8,6 +8,5 @@ public class BasicInfoPage {
 	public static By languageSearch =By.xpath("//input[@type='search']");
 	public static By userMenu=By.xpath("//span[@class='user_menu--opener_text']");
 	public static By logoutOptions=By.xpath("//a[contains(@class,'user_menu--logout')]");
-	
-	
+
 }

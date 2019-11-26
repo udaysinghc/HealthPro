@@ -26,7 +26,6 @@ public class ProfileStepDefinations extends SetupClass{
 		System.out.println("It's find the Upload file bar");
 		webelement.click();
 		System.out.println("It's clicked on Upload file options");
-
 		String avtarfile=TestUtil.avatarFile;
 		TestUtil.uploadFile(avtarfile);
 		Thread.sleep(1000);
