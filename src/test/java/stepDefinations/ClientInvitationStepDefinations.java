@@ -183,7 +183,6 @@ public class ClientInvitationStepDefinations extends SetupClass{
 	public void choose_your_start_date_to_Start_Class() throws Throwable {
 		Thread.sleep(1000);
 		webelement=driver.findElement(By.xpath("(//td[@title='Available']//a)[2]"));
-//		ac.moveToElement(webelement).build().perform();
 		Thread.sleep(500);
 		webelement.click();
 	}
@@ -203,12 +202,7 @@ public class ClientInvitationStepDefinations extends SetupClass{
 	@And("^Verify \"([^\"]*)\" wizard open$")
 	public void verify_wizard_open(String title) throws Throwable {
 		webelement=TestUtil.presenceOfElementWait(By.xpath("//h1[@data-wizard-title]"));
-		Thread.sleep(1000);
-		   String resultObtain=webelement.getText();
-			String expectedTitle=title;
-			
-//			assertEquals(expectedTitle,resultObtain);
-			System.out.println(" Title Text is verified");
+		System.out.println(" Title Text is verified");
 	}
 
 	@And("^Click on \"([^\"]*)\" button$")
@@ -385,8 +379,6 @@ public class ClientInvitationStepDefinations extends SetupClass{
 
 	@And("^Select available 'appointment' date from calendar$")
 	public void select_available_appointment_date_from_calendar() throws Throwable {
-//		webelement=driver.findElement(By.xpath("//a[@class='ui-state-default ui-state-highlight ui-state-active']"));
-//		webelement.click();
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		List<WebElement> list=driver.findElements(By.xpath("//button[@class='btn m-blue m-small booking_time--list_empty--btn booking_time--list_empty--show_next']"));
 		if(list.size()>0) 
@@ -592,8 +584,6 @@ public class ClientInvitationStepDefinations extends SetupClass{
 		Thread.sleep(1000);
 		webelement=TestUtil.presenceOfElementWait(By.xpath("//*[contains(text(),'"+arg1+"')]"));
 		String resultObtain=webelement.getText();
-//		String expectedTitle=arg1;
-//		assertEquals(expectedTitle,equalToIgnoringCase(resultObtain));
 		log.info(resultObtain + "Message appears");
 	}
 
@@ -604,6 +594,12 @@ public class ClientInvitationStepDefinations extends SetupClass{
 		webelement.clear();
 		webelement.sendKeys(arg1);
 		Thread.sleep(500);
+	}
+	@Then("^I should See Get Started Page$")
+	public void i_should_See_Get_Started_Page() throws Throwable {
+		webelement = TestUtil.presenceOfElementWait(SignUpPage.btnGet_Started);
+		webelement.click();
+		log.info("Clicked on 'Get Started' Button");
 	}
 
 

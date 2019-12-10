@@ -14,8 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.healthPro.base.SetupClass;
 
 public class TestUtil extends SetupClass{
-	public static long PAGE_LOAD_TIMEOUT = 30;
-	public static long IMPLICIT_WAIT = 60;
+	public static long PAGE_LOAD_TIMEOUT = 40;
+	public static long IMPLICIT_WAIT = 120;
 	
 	/*
 	 * 

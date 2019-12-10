@@ -1,6 +1,5 @@
 package stepDefinations;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -24,8 +23,7 @@ public class CreateProSignUpAccount extends SetupClass{
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@And("^Sign up 'Client PRO' with \"([^\"]*)\" user on Heathpro plus$")
-	public void sign_up_Client_PRO_with_user_on_Heathpro_plus(String arg1) throws Throwable {
-	    
+	public void sign_up_Client_PRO_with_user_on_Heathpro_plus(String arg1) throws Throwable {	    
 		
 		
 		//Clicked on 'Sign Up / Log In' Link 
@@ -33,24 +31,11 @@ public class CreateProSignUpAccount extends SetupClass{
 		webelement.click();
 		log.info("it's clicked on  'Sign Up / Log In' Link");
 		
-		//I verify the "Log Into Your HealthPRO Account" popup
-		
-		webelement = driver.findElement(SignUpPage.login_popup);
-		String text = webelement.getText();
-		log.info(text);
-		String expected = "Log Into Your HealthPRO Account";
-		assertEquals(expected, text);
-		log.info("it's verify ' Log In' Popup ");
-		
+				
 		//Clicked on "Sign Up as a HealthPRO Professional" Button
 		
 		webelement = driver.findElement(SignUpPage.signup_proff);
 		ac.moveToElement(webelement).build().perform();
-		String HealthPROtext = webelement.getText();
-		log.info(text);
-		String expectedHealthPRO = "Sign Up as a HealthPRO Professional";
-		assertEquals(expectedHealthPRO, HealthPROtext);
-		log.info("it's verify 'Sign Up as a HealthPRO Professional' button message ");
 		webelement.click();
 		
 		// I verify the active pricing page
@@ -86,8 +71,6 @@ public class CreateProSignUpAccount extends SetupClass{
 	    // Enter "email" as "<Email>"
 	    String mailsubstring = StringUtils.substringBefore(arg1, "@");
 	    mailId=mailsubstring;
-//		String mail="protest"+x+"@getnada.com";
-//		log.info("Mail enter for sign up : "+mail);
 		webelement=driver.findElement(SignUpPage.email);
 	    webelement.sendKeys(arg1);
 	    log.info("it's entered value"+ arg1);
@@ -139,36 +122,12 @@ public class CreateProSignUpAccount extends SetupClass{
 		webelement.click();
 		log.info("Clicked on 'Complete Order' Button");
 		Thread.sleep(1000);
-		
-		//Verify Welcome Message at Sign-Up Wizard Page
-		
-		webelement = TestUtil.presenceOfElementWait(SignUpPage.welcomeText_SignUpWizard);
-		String welcomMessage=webelement.getText();
-		String ExpectedMessage="Thank you for your business!";
-		String ExpectedMessage2=ExpectedMessage.toUpperCase();
-		assertEquals(ExpectedMessage2,welcomMessage);
-		log.info("Welcome message matched");
-		
+			
 		//Click on 'Get Started' Button
 		
 		webelement = driver.findElement(SignUpPage.btnGet_Started);
 		webelement.click();
 		log.info("Clicked on 'Get Started' Button");
-		
-		//Set your location Form open
-		webelement = TestUtil.presenceOfElementWait(SignUpPage.txtPrimary_Location);
-		String welcomMessageAtSetLocation=webelement.getText();
-		String ExpectedMessageAtSetLocation="Set Your Primary Location";
-		assertEquals(ExpectedMessageAtSetLocation,welcomMessageAtSetLocation);
-		log.info("Set Your Primary Location message matched");
-		
-		//Verify 'Where do you accept clients?' adding location appears 
-		webelement = TestUtil.presenceOfElementWait(SignUpPage.txt_accept_clients);
-		String welcomMessageaccept=webelement.getText();
-		String ExpectedMessageaccept="Where do you accept clients?";
-		String ExpectedMessage2accept=ExpectedMessageaccept.toUpperCase();
-		assertEquals(ExpectedMessage2accept,welcomMessageaccept);
-		log.info("Where do you accept clients? message matched");
 		
 	    //Click on 'My Office/Studio' options
 		webelement = driver.findElement(SignUpPage.my_Office_Options);
@@ -209,7 +168,6 @@ public class CreateProSignUpAccount extends SetupClass{
 		//Wait for title text :
 		webelement = TestUtil.presenceOfElementWait(By.xpath("//h2[@class='professional_setup_wizard--header--title' and contains(text(),'Your Expertise')]"));
 		System.err.println(webelement.getText());
-		//Boolean bln = (new WebDriverWait(driver,30)).until(ExpectedConditions.textToBePresentInElement(webelement, "Your Expertise"));
 		
 		//Select 'classes' options that can yours clients book 
 		Thread.sleep(2000);
@@ -267,9 +225,6 @@ public class CreateProSignUpAccount extends SetupClass{
 		webelement.click();
 		Thread.sleep(500);
 		webelement.sendKeys("(718)" + "343" + "2343");
-//		js.executeScript("arguments[0].value='1812345678';", webelement);
-//		webelement.sendKeys("8123456789");
-//		webelement.sendKeys(Keys.chord("8123456789"));
 		Thread.sleep(500);
 		
 		//Click on Verify By SMS button
@@ -277,8 +232,6 @@ public class CreateProSignUpAccount extends SetupClass{
 		webelement.click();
 		
 		//Enter Otp Value
-//		NadaMail4Otp.getMail(mailId);
-//		log.info(otpPassword);
 		webelement = driver.findElement(SignUpPage.otpInputField);
 		webelement.sendKeys("55555");
 		
@@ -314,12 +267,7 @@ public class CreateProSignUpAccount extends SetupClass{
 		
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(2));
-		webelement = TestUtil.presenceOfElementWait(SignUpPage.txt_DashboardWelcomeMessage);
-		String resutlObtain=webelement.getText();
-		String expectedResults="Welcome to your dashboard!";
-		assertEquals(expectedResults,resutlObtain);
-		log.info("welcome--title message matched");
-		
+				
 		//Click on 'Get Started' button
 		webelement = TestUtil.presenceOfElementWait(SignUpPage.btn_Dashboard_Get_Started);
 		webelement.click();

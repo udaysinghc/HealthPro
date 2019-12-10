@@ -27,7 +27,6 @@ public class AccountSettingsStepDefinations extends SetupClass{
 	 Thread.sleep(2000);
 		webelement=driver.findElement(AccountSettingsPage.accountSettingsSideBar);
 		System.out.println("abds"+webelement);
-//	  js.executeScript("arguments[0].scrollIntoView()", webelement); 
 	  webelement.click();
 	}
 
@@ -76,7 +75,7 @@ public class AccountSettingsStepDefinations extends SetupClass{
 	@Then("^login with 'PayPal' Account$")
 	public void login_with_PayPal_Account() throws Throwable {
 		webelement=driver.findElement(AccountSettingsPage.payPalEmail);
-		webelement.sendKeys("dovidk@healthpro.com");
+		webelement.sendKeys("Danielg@healthpro.com");
 		Thread.sleep(1000);
 		System.out.println("it's Entered Paypal emai ");
 		webelement=driver.findElement(AccountSettingsPage.payPalNextBtn);
@@ -102,42 +101,6 @@ public class AccountSettingsStepDefinations extends SetupClass{
 		String expectedTitle="Your PayPal account is connected";
 		assertEquals(expectedTitle,resultObtain);
 		System.out.println("Your PayPal account is connected Text is verified");
-	}
-	
-	@And("^Click on 'Connect with Stripe' button$")
-	public void click_on_Connect_with_Stripe_button() throws Throwable {
-		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.stripebtn);
-		webelement.click();
-	}
-
-	@And("^Verify 'Stripe' header text appears$")
-	public void verify_Stripe_header_text_appears() throws Throwable {
-		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.stripeHeaderText);
-		String resultObtain=webelement.getText();
-		System.err.println(resultObtain);
-//		String expectedTitle="Strip";
-//		assertEquals(expectedTitle,resultObtain);
-		System.out.println("'Stripe' header text appears");
-	}
-
-	@And("^Click on Already have a Stripe account\\? 'Sign In' button$")
-	public void click_on_Already_have_a_Stripe_account_Sign_In_button() throws Throwable {
-		webelement=TestUtil.presenceOfElementWait(AccountSettingsPage.stripesignInLink);
-		webelement.click();
-	}
-
-	@Then("^login with 'Stripe' Account$")
-	public void login_with_Stripe_Account() throws Throwable {
-		webelement=driver.findElement(AccountSettingsPage.stripeEmail);
-		webelement.sendKeys("testsqelabs@gmail.com");
-		Thread.sleep(1000);
-		
-		webelement=driver.findElement(AccountSettingsPage.stripePassword);
-		webelement.sendKeys("P@ssword1");
-		Thread.sleep(1000);
-		
-		webelement=driver.findElement(AccountSettingsPage.stripeLoginBtn);
-		webelement.click();
 	}
 	
 	@And("^Click on 'Add Youtube Video' button$")

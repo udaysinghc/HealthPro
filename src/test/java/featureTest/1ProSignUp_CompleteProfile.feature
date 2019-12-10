@@ -87,13 +87,6 @@ Feature: 'PRO SIGN UP AND COMPLETE PROFILE' Test
 	And 'In Person & Online' payment method
 	And Verify 'Your PayPal account is connected' String Message
 	
-#	Scenario: Add 'Stripe' Account
-#	And Click on 'Connect with Stripe' button
-#	And Verify 'Stripe' header text appears
-#	And Click on Already have a Stripe account? 'Sign In' button
-#	And Verify 'Stripe' header text appears
-#	Then login with 'Stripe' Account
-	
 	Scenario: Quite Browser
 	And close the broswer
 	

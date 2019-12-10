@@ -112,11 +112,6 @@ public class SignupStepDefinations extends SetupClass {
 
 			webelement = driver.findElement(SignUpPage.signup_proff);
 			ac.moveToElement(webelement).build().perform();
-			String text = webelement.getText();
-			log.info(text);
-			String expected = "Sign Up as a HealthPRO Professional";
-			assertEquals(expected, text);
-			log.info("it's verify 'Sign Up as a HealthPRO Professional' button message ");
 			webelement.click();
 			break;
 			

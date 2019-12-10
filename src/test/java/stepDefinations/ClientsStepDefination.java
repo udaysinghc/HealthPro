@@ -18,8 +18,6 @@ public class ClientsStepDefination extends SetupClass{
 	
 	@And("^Click on 'Clients' Side-Bar$")
 	public void click_on_Clients_Side_Bar() throws Throwable {
-//		Thread.sleep(3000);
-//		 js.executeScript("return document.documentElement.scrollTop = 0;");
 		 Thread.sleep(2000);
 		webelement=driver.findElement(ClientsPage.clientsMenu);
 	 webelement.click();

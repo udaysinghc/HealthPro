@@ -13,14 +13,10 @@ Scenario Outline: 'SignUp As a Client ' on Branch
 	And Enter "Password123" at 'Create a Password' Textbox
 	And Select 'I agree to HealthPRO's' check box
 	When Click on "Create a New Account" button
-	Then Verify "We are happy to have you onboard!" Message appears
-	Then Click on "OK" Link
-	When Verify "Phone Number Verification" prompt open
-    Then Verify Mobile number using SMS 
-    And Verify "My HealthPROs" panel header Title text
+	Then I should See Get Started Page
     And close the broswer
     Examples:
-    |Email Address             |
+    |Email Address           |
     |testclient01@getnada.com|
     |testclient02@getnada.com|
     |testclient03@getnada.com|

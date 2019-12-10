@@ -10,8 +10,7 @@ import cucumber.api.junit.Cucumber;
 		features= {"."},
 		plugin = {"pretty", "html:target/site/cucumber-pretty",
 				"json:target/cucumber/cucumber.json", "usage:target/usage.jsonx","junit:target/cucumber.xml" },
-		glue= {"stepDefinations"},
-//		tags = {"@Sanity" },				
+		glue= {"stepDefinations"},			
 		monochrome = true			
 		)
 

@@ -43,9 +43,6 @@ public class ProfileStepDefinations extends SetupClass{
 		final String pinterest="pinterest";
 		final String instagram="instagram";
 		final String youtube="youtube";
-//		final String ideafit="ideafit";
-//		final String Amazon="Amazon";
-		
 		
 		switch(socailMedia) 
 		{
@@ -97,21 +94,7 @@ public class ProfileStepDefinations extends SetupClass{
 			 webelement.sendKeys("https://www.youtube.com/watch");
 			 System.out.println("It's Entered youtube link");
 			 break;
-		
-//		case ideafit:
-//			 webelement=driver.findElement(MyProfilePage.ideafit);
-//			 webelement.click();
-//			 webelement.sendKeys("https://www.ideafit.com");
-//			 System.out.println("It's Entered ideafit link");
-//			 break;
-//			
-//		case Amazon:
-//			 webelement=driver.findElement(MyProfilePage.amazon);
-//			 webelement.click();
-//			 webelement.sendKeys("https://www.amazon.com/s?k=ELECTRA&ref=bl_dp_s_web_0");
-//			 System.out.println("It's Entered Amazon link");
-//			 break;
-			
+	
 		}
 	    
 	}
@@ -140,8 +123,6 @@ public class ProfileStepDefinations extends SetupClass{
 			webelement.click();
 			 
 		}
-//		String expectedMessage="Your changes have been saved";
-//		assertEquals(expectedMessage,dialogMessage);
 		else {
 		webelement=driver.findElement(MyProfilePage.okbtn);
 		webelement.click();
@@ -224,22 +205,6 @@ public class ProfileStepDefinations extends SetupClass{
 		 String expectedyoutubeText="https://www.youtube.com/watch";
 		 assertEquals(expectedyoutubeText, youtubeText);
 		 System.out.println("It's verifed youtube link");
-		 
-		
-	
-//	case ideafit:
-//		 webelement=driver.findElement(MyProfilePage.ideafit);
-//		 webelement.click();
-//		 webelement.sendKeys("https://www.ideafit.com");
-//		 System.out.println("It's Entered ideafit link");
-		
-		
-//	case Amazon:
-//		 webelement=driver.findElement(MyProfilePage.amazon);
-//		 String AmazonText=webelement.getAttribute("value");
-//		 String expectedAmazonText="https://www.amazon.com/s?k=ELECTRA&ref=bl_dp_s_web_0";
-//		 assertEquals(expectedAmazonText, AmazonText);
-//		 System.out.println("It's verifed Amazon link");
 				
 	}
 
