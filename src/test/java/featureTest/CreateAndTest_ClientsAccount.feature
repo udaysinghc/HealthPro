@@ -17,13 +17,13 @@ Scenario Outline: 'SignUp As a Client ' on Branch
     And close the broswer
     Examples:
     |Email Address           |
-    |testclient01@getnada.com|
-    |testclient02@getnada.com|
-    |testclient03@getnada.com|
-    |testclient04@getnada.com|
-    |testclient05@getnada.com|
-    |testclient06@getnada.com|
- 	|testclient07@getnada.com|
-	|testclient08@getnada.com|
-	|testclient09@getnada.com|
-	|testclient10@getnada.com|
+    |testclient0132132@getnada.com|
+#    |testclient02@getnada.com|
+#    |testclient03@getnada.com|
+#    |testclient04@getnada.com|
+#    |testclient05@getnada.com|
+#    |testclient06@getnada.com|
+# 	|testclient07@getnada.com|
+#	|testclient08@getnada.com|
+#	|testclient09@getnada.com|
+#	|testclient10@getnada.com|
