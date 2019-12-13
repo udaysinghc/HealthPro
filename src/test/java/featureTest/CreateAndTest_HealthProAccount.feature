@@ -55,10 +55,11 @@ Scenario Outline: Create ' Client PRO ' Test Account on Branch
 	
 	Examples:
 	|Email Address         |
-    |clientpro01@getnada.com|
+	|clientpro01@getnada.com|
 	|clientpro02@getnada.com|
 	|clientpro03@getnada.com|
 	|clientpro04@getnada.com|
 	|clientpro05@getnada.com|
 
+	
 	

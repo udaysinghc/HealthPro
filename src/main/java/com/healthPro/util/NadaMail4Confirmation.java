@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.healthPro.base.SetupClass;
 
@@ -42,33 +44,8 @@ public class NadaMail4Confirmation extends SetupClass {
 		//get inbox mail
 		
 		
-		driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(240, TimeUnit.SECONDS);
 			
-//			List<WebElement> listMailOnStart=driver.findElements(By.xpath("//div[@class='waiting']"));
-//			int totalInboxMailOnStart=listMailOnStart.size();
-//			System.out.println("Total number of mail :"+totalInboxMailOnStart);
-//			int maxTryForNewMail=0;
-//			while(totalInboxMailOnStart>0 && maxTryForNewMail<=6) 
-//			{
-//				Thread.sleep(10000);
-//				System.err.println("Waiting for received mail");
-//				List<WebElement> listMailOnWait=driver.findElements(By.xpath("//div[@class='waiting']"));
-//				int totalInboxMailOnWait=listMailOnWait.size();
-//				System.out.println("Total number of mail totalInboxMailOnWait :"+totalInboxMailOnWait);
-//				totalInboxMailOnStart=totalInboxMailOnWait;
-//				System.out.println("Total number of mail totalInboxMailOnStart :"+totalInboxMailOnStart);
-//				
-//
-//				maxTryForNewMail++;
-//			}
-//			if(maxTryForNewMail>=7) 
-//			{
-//				
-//			driver.close();
-//			Thread.sleep(1000);
-//			driver.switchTo().window(tabs.get(0));
-//			return false;
-//			}else {
 			Thread.sleep(1500);
 			
 			List<WebElement> list=driver.findElements(By.xpath("//ul[@class='msg_list']//li"));
@@ -77,33 +54,27 @@ public class NadaMail4Confirmation extends SetupClass {
 			
 			int maxTry=0;
 			for(int i=1;i<=totalInboxMail;i++) 
-			{
-				
+			{				
 				webelement=driver.findElement(By.xpath("(//ul[@class='msg_list']//li)["+i+"]"));
 				if(webelement.getText().contains("Confirm Your Email to Get Started with HealthPRO")) 
 				{webelement.click();
 				System.out.println("Mail found");
 				Thread.sleep(2000);
 				driver.switchTo().frame(1);
-				webelement=driver.findElement(By.xpath("//a[contains(text(),'Verify my email')]"));				
+				webelement=(new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Verify my email')]")));
 				webelement.click();
-				break;
-				
-
-				
-				}else if(i==list.size() && maxTry<=2) 
+				break;		
+				}else if(i==list.size() && maxTry<=150) 
 				{
-					System.out.println("Wait for 30 secounds for get mail in inbox");
-					Thread.sleep(30000);
+					System.out.println("Wait for 02 secounds for get mail in inbox");
+					Thread.sleep(2000);
 					List<WebElement> list2=driver.findElements(By.xpath("//ul[@class='msg_list']//li"));
 					totalInboxMail=list2.size();
-					System.out.println("Now Number of mail after 30 secound wait :"+totalInboxMail);
-					i=0;
+					i=1;
 					maxTry++;
-				}else if(maxTry==3) 
-				{System.out.println("OTP for supplier after MAxTry :" +otpPassword);
+				}else if(maxTry==151) 
+				{
 					System.out.println("Mail not found");
-
 					break;
 				}
 			}
