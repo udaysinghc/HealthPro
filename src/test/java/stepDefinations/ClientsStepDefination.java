@@ -56,8 +56,8 @@ public class ClientsStepDefination extends SetupClass{
 		
 		Random rand=new Random();
 		int x=rand.nextInt(10000);
-		 clientsMailId="ClientsTest"+x;
-			String mail="ClientsTest"+x+"@getnada.com";
+		 clientsMailId="ClientsTestpro"+x;
+			String mail="ClientsTestpro"+x+"@getnada.com";
 			System.out.println("Mail enter for sign up : "+mail);
 			webelement=driver.findElement(By.xpath("//input[@data-field='"+locator+"']"));	
 		    webelement.sendKeys(mail);

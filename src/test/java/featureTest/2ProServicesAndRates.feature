@@ -167,17 +167,15 @@ Feature: PRO CREATE FULL SCHEDULE of 'SERVICE AND RATES' Test
     And Verify "Suitability" panel header Title text
     And click on "Age Group" item panel to open it
     And Select "Children" from listed item
-#    And Select "Teenagers" from listed item
     And Select "Adults" from listed item
     And click on "Gender Identities Served" item panel to open it
     And Select "Men Only" from listed item
-    And click on "Specials Needs" item panel to open it
+    And click on "Special Needs" item panel to open it
     And Select "Blind" from listed item
     And Select "Physically Disabled" from listed item
     When Click on 'Save Changes' button
     Then Verify "Your changes have been saved" message appears
     And Verify "Children" is properly selcted from listed item or not
-#    And Verify "Teenagers" is properly selcted from listed item or not
     And Verify "Adults" is properly selcted from listed item or not
     And Verify "Men Only" is properly selcted from listed item or not
     And Verify "Blind" is properly selcted from listed item or not
@@ -194,7 +192,6 @@ Feature: PRO CREATE FULL SCHEDULE of 'SERVICE AND RATES' Test
     And Enter Clients "first_name" in text box as "<first_name>"
     And Enter Clients "last_name" in text box as "<last_name>"
     And Enter Clients "email" in text box "<email>"
-#    And Enter Clients "phone" in text box as "<phone>"
     And Click on 'Upload and Send Emails' button
     And Verify "Inviting Client(s) Complete" popup header Title text
     And Click on 'View Reports' link

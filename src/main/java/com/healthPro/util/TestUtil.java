@@ -24,7 +24,7 @@ public class TestUtil extends SetupClass{
 	 */
 	
 	public static WebElement presenceOfElementWait(By locator) {
-		webelement = (new WebDriverWait(driver, 120)).until(ExpectedConditions.presenceOfElementLocated(locator));
+		webelement = (new WebDriverWait(driver, 180)).until(ExpectedConditions.presenceOfElementLocated(locator));
 		return webelement;
 	}
 

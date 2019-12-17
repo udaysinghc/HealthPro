@@ -37,7 +37,6 @@ Feature: PRO SignUp & 'Invite Clients' & 'Book A Session' Test
     And Enter Clients "first_name" in text box as "<first_name>"
     And Enter Clients "last_name" in text box as "<last_name>"
     And Enter Clients "email" in text box "<email>"
-#    And Enter Clients "phone" in text box as "<phone>"
     And Click on 'Upload and Send Emails' button
     And Verify "Inviting Client(s) Complete" popup header Title text
     And Click on 'View Reports' link

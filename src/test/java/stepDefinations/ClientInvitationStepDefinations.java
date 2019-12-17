@@ -73,16 +73,16 @@ public class ClientInvitationStepDefinations extends SetupClass{
 			
 			break;
 						
-			}else if(i==list.size() && maxTry<=2) 
+			}else if(i==list.size() && maxTry<=150) 
 			{
-				System.out.println("Wait for 30 secounds for get mail in inbox");
-				Thread.sleep(30000);
+				System.out.println("Wait for 02 secounds for get mail in inbox");
+				Thread.sleep(2000);
 				List<WebElement> list2=driver.findElements(By.xpath("//ul[@class='msg_list']//li"));
 				totalInboxMail=list2.size();
-				System.out.println("Now Number of mail after 30 secound wait :"+totalInboxMail);
-				i=0;
+				System.out.println("Now Number of mail after 02 secound wait :"+totalInboxMail);
+				i=1;
 				maxTry++;
-			}else if(maxTry==3) 
+			}else if(maxTry==151) 
 			{
 				System.out.println("Mail not found");
 
